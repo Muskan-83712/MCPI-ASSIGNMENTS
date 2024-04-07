@@ -33,10 +33,24 @@ int main(void)
 	SystemInit();
 	SystemInit();
 	LedInit(LED_BLUE);
+	LedInit(LED_GREEN);
+	LedInit(LED_ORANGE);
+	LedInit(LED_RED);
 	TimerInit();
 	while(1){
-		LedBlink(LED_BLUE,500);
-		TimerDelayMs(10000);
+		LedOn(LED_BLUE);
+		LedOn(LED_RED);
+		LedOn(LED_GREEN);
+		LedOn(LED_ORANGE);
+
+		TimerDelayMs(3000);
+
+		LedOff(LED_BLUE);
+		LedOff(LED_RED);
+		LedOff(LED_GREEN);
+		LedOff(LED_ORANGE);
+
+		TimerDelayMs(7000);
 	}
 	return 0;
 }
